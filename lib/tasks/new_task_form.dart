@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class NewTaskForm extends StatefulWidget {
@@ -14,9 +16,18 @@ class _NewTaskFormState extends State<NewTaskForm> {
   Widget build(BuildContext context) {
     final descriptionController = TextEditingController();
 
+    void _pushTask() {
+      if (_formKey.currentState?.validate() ?? false) {
+        print("Will push new task");
+      } else {
+
+      }
+    }
+
     return Form(
       key: _formKey,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           TextFormField(
             decoration: const InputDecoration(
@@ -45,8 +56,10 @@ class _NewTaskFormState extends State<NewTaskForm> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Ajout de la tâche'))
+                    const SnackBar(content: Text('')),
                 );
+                print("object");
+                _pushTask();
               }
             },
             child: const Text('Ajout'),
