@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './tasks/task_list.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -33,9 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Tasks',
-    ),
+    TaskList(),
     Text(
       'Index 1: Accueil',
     ),
@@ -59,9 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -72,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(icon: Icon(Icons.school,), label: 'School'),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.teal[300],
         onTap: _onItemTapped,
       ),
       floatingActionButton: FloatingActionButton(
