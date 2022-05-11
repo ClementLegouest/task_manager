@@ -72,11 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: Colors.teal[300],
         onTap: _onItemTapped,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
     );
   }
 }
